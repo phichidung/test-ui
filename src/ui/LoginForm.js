@@ -6,7 +6,7 @@ export default class LoginForm extends Component {
     render() {
 
         return (
-            <Panel header={'Login'}>
+            <Panel header={'Sign in to Sphinx'}>
                 <input type="text" placeholder={'username'}/>
                 <input type="password" placeholder={'password'}/>
             </Panel>
