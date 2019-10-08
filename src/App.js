@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { ButtonCustomizeWayOne, Panel, PanelList, LoginForm, ButtonCustomizeWayTwo } from '../src/ui';
+import { ButtonCustomizeWayOne,
+         Panel,
+         PanelList,
+         LoginForm,
+         ButtonCustomizeWayTwo,
+         Checkbox
+} from '../src/ui';
 
 export default class App extends Component {
 
@@ -80,7 +86,15 @@ export default class App extends Component {
 
                 <hr/>
 
+                <section>
+                    <h1>Checkbox</h1>
+                    <Checkbox
+                        label={'Checkbox'}
+                        checked={true}
+                    />
+                </section>
 
+                <hr/>
             </div>
         );
     }
