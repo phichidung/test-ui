@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Button extends Component {
+export default class ButtonCustomizeWayOne extends Component {
 
     render() {
         const { type, onClick } = this.props;

@@ -1,0 +1,23 @@
+.btn {
+    border-radius: 2px;
+    border: solid 1px grey;
+    font-size: 14px;
+    padding: 7px 15px;
+    color: #fff;
+}
+
+.btn.btn.success {
+    background-color: greenyellow;
+}
+
+.btn.btn.success.active {
+    background-color: green;
+}
+
+.btn.btn.danger {
+    background-color: red;
+}
+
+.btn.btn.danger.active {
+    background-color: darkred;
+}
