@@ -4,6 +4,8 @@ import Panel from "./Panel";
 import PanelList from "./PanelList";
 import ButtonCustomizeWayTwo from "./ButtonCustomizeWayTwo";
 import Checkbox from "./Checkbox";
+import Paginator from "./Paginator";
+import DataTable from "./DataTable";
 
 export {
     ButtonCustomizeWayOne,
@@ -12,4 +14,6 @@ export {
     PanelList,
     ButtonCustomizeWayTwo,
     Checkbox,
+    Paginator,
+    DataTable,
 };

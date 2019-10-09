@@ -4,7 +4,9 @@ import { ButtonCustomizeWayOne,
          PanelList,
          LoginForm,
          ButtonCustomizeWayTwo,
-         Checkbox
+         Checkbox,
+         Paginator,
+         DataTable,
 } from '../src/ui';
 
 export default class App extends Component {
@@ -28,10 +30,11 @@ export default class App extends Component {
 
                 <section>
                     <h1>Button Customize Way Two</h1>
-                    <div style={{ display: 'flex' }}>
+                    <div>
                         <ButtonCustomizeWayTwo
                             role={'success'}
-                            active={false}
+                            active={true}
+                            move={true}
                         >
                             Create new
                         </ButtonCustomizeWayTwo>
@@ -96,6 +99,95 @@ export default class App extends Component {
                 </section>
 
                 <hr/>
+
+                <section>
+                    <h1>Paginator</h1>
+                    <Paginator/>
+                </section>
+
+                <hr/>
+
+                <section>
+                    <h1>Data Table</h1>
+                    <div>
+                        <DataTable
+                            header={[
+                                <th>
+                                    <Checkbox
+                                        checked={'true'}
+                                        onChange={ (checked) => console.log(checked) }
+                                    />
+                                </th>,
+                                <th>Member ID</th>,
+                                <th>Login ID</th>,
+                                <th>Status</th>,
+                                <th>Actions</th>
+                            ]}
+                            data={[
+                                { memberID: 1, loginID: 1, status: 'loading...' },
+                                { memberID: 2, loginID: 2, status: 'pending...' },
+                                { memberID: 3, loginID: 3, status: 'doing...' },
+                            ]}
+                            renderRow={ ({ memberID, loginID, status, index }) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>
+                                            <Checkbox
+                                                checked={'true'}
+                                                onChange={ (checked) => console.log(checked) }
+                                            />
+                                        </td>
+                                        <td>{memberID}</td>
+                                        <td>{loginID}</td>
+                                        <td>{status}</td>
+                                        <td>Actions</td>
+                                    </tr>
+                                )
+                            }}
+                        />
+                    </div>
+                    <hr/>
+                    <h1>Data Table Hightlighted</h1>
+                    <div>
+                        <DataTable
+                            header={[
+                                <th>
+                                    <Checkbox
+                                        checked={'true'}
+                                        onChange={ (checked) => console.log(checked) }
+                                    />
+                                </th>,
+                                <th>Member ID</th>,
+                                <th>Login ID</th>,
+                                <th>Status</th>,
+                                <th>Actions</th>
+                            ]}
+                            data={[
+                                { memberID: 1, loginID: 1, status: 'loading...' },
+                                { memberID: 2, loginID: 2, status: 'pending...' },
+                                { memberID: 3, loginID: 3, status: 'doing...' },
+                            ]}
+                            renderRow={ ({ memberID, loginID, status, index }) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>
+                                            <Checkbox
+                                                checked={'true'}
+                                                onChange={ (checked) => console.log(checked) }
+                                            />
+                                        </td>
+                                        <td>{memberID}</td>
+                                        <td>{loginID}</td>
+                                        <td>{status}</td>
+                                        <td>Actions</td>
+                                    </tr>
+                                )
+                            }}
+                            hightlighted={true}
+                        />
+                    </div>
+                </section>
+
             </div>
         );
     }

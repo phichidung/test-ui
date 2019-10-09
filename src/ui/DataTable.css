@@ -1,0 +1,34 @@
+.neu.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 1px #dce1e4;
+}
+
+.neu.data-table thead {
+    border-bottom: solid 1px #dce1e4;
+}
+
+.neu.data-table thead tr {
+    background-color: #fff;
+}
+
+.neu.data-table thead tr th {
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.neu.data-table tbody tr td {
+    padding: 10px 15px
+}
+
+.neu.data-table tbody tr:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.neu.data-table tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.neu.data-table.hightlighted tbody tr:hover {
+    background-color: #aef9ef;
+}
