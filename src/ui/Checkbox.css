@@ -1,0 +1,11 @@
+.neu.checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: solid 1px #dce1e4;
+    transition: background-color 100ms ease-in-out;
+}
+
+.neu.checkbox.checked {
+    background-color: #4ece3d;
+}

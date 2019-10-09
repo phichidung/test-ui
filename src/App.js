@@ -89,8 +89,9 @@ export default class App extends Component {
                 <section>
                     <h1>Checkbox</h1>
                     <Checkbox
+                        checked={'true'}
                         label={'Checkbox'}
-                        checked={true}
+                        onChange={ (checked) => console.log(checked) }
                     />
                 </section>
 
