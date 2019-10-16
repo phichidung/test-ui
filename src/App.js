@@ -8,6 +8,9 @@ import { ButtonCustomizeWayOne,
          Paginator,
          DataTable,
 } from '../src/ui';
+import Clock from "./components/Clock";
+import Timer from "./components/Timer";
+import Todo from "./components/Todo";
 
 export default class App extends Component {
 
@@ -188,6 +191,26 @@ export default class App extends Component {
                     </div>
                 </section>
 
+                <hr/>
+
+                <section>
+                    <h1>Clock</h1>
+                    <Clock/>
+                </section>
+
+                <hr/>
+
+                <section>
+                    <h1>Timer</h1>
+                    <Timer/>
+                </section>
+
+                <hr/>
+
+                <section>
+                    <h1>Todo</h1>
+                    <Todo/>
+                </section>
             </div>
         );
     }
