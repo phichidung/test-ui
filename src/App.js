@@ -7,6 +7,7 @@ import { ButtonCustomizeWayOne,
          Checkbox,
          Paginator,
          DataTable,
+         DropDown,
 } from '../src/ui';
 import Clock from "./components/Clock";
 import Timer from "./components/Timer";
@@ -210,6 +211,13 @@ export default class App extends Component {
                 <section>
                     <h1>Todo</h1>
                     <Todo/>
+                </section>
+
+                <hr/>
+
+                <section>
+                    <h1>DropDown</h1>
+                    <DropDown/>
                 </section>
             </div>
         );

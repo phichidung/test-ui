@@ -6,6 +6,7 @@ import ButtonCustomizeWayTwo from "./ButtonCustomizeWayTwo";
 import Checkbox from "./Checkbox";
 import Paginator from "./Paginator";
 import DataTable from "./DataTable";
+import DropDown from "./DropDown";
 
 export {
     ButtonCustomizeWayOne,
@@ -16,4 +17,5 @@ export {
     Checkbox,
     Paginator,
     DataTable,
+    DropDown,
 };
