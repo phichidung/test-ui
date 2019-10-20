@@ -6,13 +6,13 @@ export default class DropDown extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: false
+            show: false
         }
     }
 
     handleToggle() {
         this.setState({
-            open: !this.state.open
+            show: !this.state.show
         })
     }
 
@@ -21,7 +21,7 @@ export default class DropDown extends Component {
             <div>
                 <button onClick={ () => this.handleToggle() }>Show Info</button>
                 {
-                    this.state.open &&
+                    this.state.show &&
                     (
                         <div className={'itami dropdown'}>
                             <div>Name: Itami:R-S</div>

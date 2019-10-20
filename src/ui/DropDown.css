@@ -1,5 +1,8 @@
 .itami.dropdown {
     border-radius: 4px;
     border: solid 1px #282c34;
-    margin: 50px 50px;
+    margin: 25px 25px;
+    padding: 25px 25px;
+    width: 150px;
+    height: 150px;
 }
