@@ -19,7 +19,9 @@ export default class DropDown extends Component {
     render() {
         return (
             <div>
-                <button onClick={ () => this.handleToggle() }>Show Info</button>
+                <button onClick={ () => this.handleToggle() }>
+                    Show Info
+                </button>
                 {
                     this.state.show &&
                     (
