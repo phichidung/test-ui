@@ -11,17 +11,18 @@ export default class TodoApp extends Component {
     }
 
     render() {
+        const { items, text } = this.state;
 
         return (
             <div>
-                <TodoList items={this.state.items} />
+                <TodoList items={items} />
                 <form onSubmit={ (e) => this.handleSubmit(e) }>
                     <input
                         onChange={ (e) => this.handleChange(e) }
-                        value={this.state.text}
+                        value={text}
                     />
                     <button>
-                        Add #{this.state.items.length + 1}
+                        Add #{items.length + 1}
                     </button>
                 </form>
             </div>

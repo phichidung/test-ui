@@ -1,37 +1,39 @@
 import React, { Component } from 'react';
-import { ButtonCustomizeWayOne,
-         Panel,
-         PanelList,
-         LoginForm,
-         ButtonCustomizeWayTwo,
-         Checkbox,
-         Paginator,
-         DataTable,
-         DropDown,
-} from '../src/ui';
-import Clock from "./components/Clock";
-import Timer from "./components/Timer";
-import Todo from "./components/Todo";
+import {
+    Panel,
+    PanelList,
+    LoginForm,
+    ButtonCustomizeWayTwo,
+    Checkbox,
+    Paginator,
+    DataTable,
+    DropDown,
+    Button
+}                           from '../src/ui';
+import Clock                from './components/Clock';
+import Timer                from './components/Timer';
+import Todo                 from './components/Todo';
 
 export default class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            showDropDown: false
+        };
+    };
+
+    toggleDropDown() {
+        this.setState({
+            showDropDown: !this.state.showDropDown
+        })
+    };
 
     render() {
         const data = [1, 2, 3];
 
         return (
             <div>
-                <section>
-                    <h1>Button Customize Way One</h1>
-                    <ButtonCustomizeWayOne
-                        type={'success'}
-                        onClick={ () => alert('Yo-lo') }
-                    >
-                        Create new
-                    </ButtonCustomizeWayOne>
-                </section>
-
-                <hr/>
-
                 <section>
                     <h1>Button Customize Way Two</h1>
                     <div>
@@ -69,9 +71,7 @@ export default class App extends Component {
                     <h1>Panel List</h1>
                     <PanelList
                         list={data}
-                        renderItem={item => {
-                            return <span>Item data: {item.data}, index: {item.index}</span>
-                        }}
+                        renderItem={item => <span>Item data: {item.data}, index: {item.index}</span>}
                     />
                 </section>
 
@@ -217,8 +217,82 @@ export default class App extends Component {
 
                 <section>
                     <h1>DropDown</h1>
-                    <DropDown/>
+                    <DropDown
+                        show={this.state.showDropDown}
+                        toggleDropDown={ () => this.toggleDropDown() }
+                    />
                 </section>
+
+                <hr/>
+
+                <section>
+                    <h1>Button</h1>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={true}
+                        role={''}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'primary'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'secondary'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'success'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'info'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'warning'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'danger'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        role={'link'}
+                    >
+                        Click
+                    </Button>
+                    <Button
+                        onClick={ () => alert('Samurai')}
+                        disabled={false}
+                        responsive={true}
+                    >
+                        Click
+                    </Button>
+                </section>
+
+                <hr/>
             </div>
         );
     }

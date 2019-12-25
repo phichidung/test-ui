@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes            from 'prop-types';
 import './DropDown.css';
 
 export default class DropDown extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            show: false
-        }
-    }
-
-    handleToggle() {
-        this.setState({
-            show: !this.state.show
-        })
-    }
-
     render() {
+        const { show, toggleDropDown } = this.props;
+
         return (
             <div>
-                <button onClick={ () => this.handleToggle() }>
+                <button onClick={toggleDropDown}>
                     Show Info
                 </button>
                 {
-                    this.state.show &&
-                    (
+                    show && (
                         <div className={'itami dropdown'}>
                             <div>Name: Itami:R-S</div>
                             <div>Job: Ranger</div>
@@ -35,3 +24,14 @@ export default class DropDown extends Component {
         );
     }
 }
+
+PropTypes.defaultProps = {
+    show            : false,
+    toggleDropDown  : () => {}
+};
+
+PropTypes.propTypes = {
+    show            : PropTypes.bool,
+    toggleDropDown  : PropTypes.func
+};
+

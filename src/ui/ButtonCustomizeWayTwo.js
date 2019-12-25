@@ -15,12 +15,13 @@ export default class ButtonCustomizeWayTwo extends Component {
     };
 
     render() {
-        const { active, role } = this.props;
+        const { move }                   = this.state;
+        const { active, role, children } = this.props;
 
         return(
             <div>
-                <button onClick={ () => this.onClick() } className={`btn btn ${role || ''} ${active ? 'active' : ''} ${this.state.move ? 'move' : ''}`}>
-                    {this.props.children}
+                <button onClick={ () => this.onClick() } className={`btn btn ${role || ''} ${active ? 'active' : ''} ${move ? 'move' : ''}`}>
+                    {children}
                 </button>
             </div>
         );

@@ -1,0 +1,39 @@
+.itami.button {
+    border-radius: 4px;
+    outline: none;
+    font-size: 12px;
+    padding: 10px 15px;
+}
+
+.itami.button.responsive {
+    width: 100%;
+    text-align: center;
+}
+
+.itami.button.primary {
+    background-color: #007bff;
+}
+
+.itami.button.secondary {
+    background-color: #6c757d;
+}
+
+.itami.button.success {
+    background-color: #28a745;
+}
+
+.itami.button.info {
+    background-color: #17a2b8;
+}
+
+.itami.button.warning {
+    background-color: #ffc107;
+}
+
+.itami.button.danger {
+    background-color: #dc3545;
+}
+
+.itami.button.link {
+    color: #007bff;
+}
