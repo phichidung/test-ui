@@ -1,0 +1,39 @@
+.scroll-bar {
+    overflow: auto;
+    /*
+        Thuộc tính của scrollbar:
+            visible (mặc định): Nếu kích thước nội dung lớn hơn kích thước phần tử thì nội dung sẽ bị tràn ra ngoài.
+            hidden: Nếu kích thước nội dung lớn hơn kích thước phần tử thì nội dung dư thừa sẽ bị ẩn đi.
+            scroll: Phần tử sẽ hiển thị thanh scroll ngang, và thanh scroll dọc (Mặc cho kích thước phần nội dung có lớn hơn kích thước phần tử hay không).
+            auto:
+                - Phần tử hiển thị thanh scroll ngang (Nếu chiều rộng phần nội dung lớn hơn chiều rộng phần tử)
+                - Phần tử sẽ hiển thị thanh scroll dọc (Nếu chiều cao phần nội dung lớn hơn chiều rộng phần tử)
+                - Phần tử sẽ hiển thị thanh scroll ngang và thanh scroll dọc (Nếu chiều rộng và chiều cao phần nội dung lớn hơn chiều rộng và chiều cao của phần tử)
+            initial: Sử dụng giá trị mặc định của nó.
+            inherit: Kế thừa giá trị thuộc tính overflow từ phần tử cha của nó.
+    */
+    max-height: 100px;
+    width: fit-content;
+    margin-left: 100px;
+    border: 1px solid #999;
+}
+
+.scroll-bar.hide {
+    overflow: hidden;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    width: 4px;
+    background-color: #F5F5F5;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #009a7c;
+}

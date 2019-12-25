@@ -8,7 +8,8 @@ import {
     Paginator,
     DataTable,
     DropDown,
-    Button
+    Button,
+    ScrollBar
 }                           from '../src/ui';
 import Clock                from './components/Clock';
 import Timer                from './components/Timer';
@@ -293,6 +294,11 @@ export default class App extends Component {
                 </section>
 
                 <hr/>
+
+                <section>
+                    <h1>ScrollBar</h1>
+                    <ScrollBar/>
+                </section>
             </div>
         );
     }

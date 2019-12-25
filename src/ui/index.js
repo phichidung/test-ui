@@ -7,6 +7,7 @@ import Paginator from "./Paginator";
 import DataTable from "./DataTable";
 import DropDown from "./DropDown";
 import Button from "./Button";
+import ScrollBar from "./ScrollBar";
 
 export {
     LoginForm,
@@ -17,5 +18,6 @@ export {
     Paginator,
     DataTable,
     DropDown,
-    Button
+    Button,
+    ScrollBar
 };
