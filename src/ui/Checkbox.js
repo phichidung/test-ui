@@ -16,20 +16,24 @@ export default class Checkbox extends Component {
     };
 
     render() {
+        const { checked } = this.state;
+        const { label }   = this.props;
 
         return (
             <label onClick={ () => this.onClick() } style={{ display: 'flex' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div
-                        className={`neu checkbox ${this.state.checked ? 'checked' : ''}`}
-                        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    <div className={`neu checkbox ${checked ? 'checked' : ''}`}
+                         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
                     >
-                        <img style={{ height: 10, width: 10 }} src={require('../images/checkmark.svg')} alt={'checkmark'}/>
+                        <img style={{ height: 10, width: 10 }}
+                             src={require('../images/checkmark.svg')}
+                             alt={'checkmark'}
+                        />
                     </div>
                 </div>
                 &nbsp;
                 <div>
-                    {this.props.label}
+                    {label}
                 </div>
             </label>
         );

@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component }               from 'react';
 import {
-    Panel,
     PanelList,
     LoginForm,
-    ButtonCustomizeWayTwo,
+    ButtonZoomRotate,
     Checkbox,
     Paginator,
     DataTable,
     DropDown,
     Button,
-    ScrollBar
-}                           from '../src/ui';
-import Clock                from './components/Clock';
-import Timer                from './components/Timer';
-import Todo                 from './components/Todo';
+    ScrollBar,
+}                                         from '../src/ui';
+import Panel, { PanelBody, PanelHeader }  from "./ui/Panel";
+import { Clock, Timer, Todo }             from './components';
+import { dividers }                       from "./common/dividers";
 
 export default class App extends Component {
 
@@ -36,33 +35,29 @@ export default class App extends Component {
         return (
             <div>
                 <section>
-                    <h1>Button Customize Way Two</h1>
+                    <h1>Button Zoom Rotate</h1>
                     <div>
-                        <ButtonCustomizeWayTwo
-                            role={'success'}
-                            active={true}
-                            move={true}
+                        <ButtonZoomRotate role={'success'}
+                                          active={true}
+                                          move={true}
                         >
                             Create new
-                        </ButtonCustomizeWayTwo>
-                        <ButtonCustomizeWayTwo
-                            role={'success'}
-                            active={true}
+                        </ButtonZoomRotate>
+                        <ButtonZoomRotate role={'success'}
+                                          active={true}
                         >
                             Create new
-                        </ButtonCustomizeWayTwo>
-                        <ButtonCustomizeWayTwo
-                            role={'danger'}
-                            active={false}
+                        </ButtonZoomRotate>
+                        <ButtonZoomRotate role={'danger'}
+                                          active={false}
                         >
                             Create new
-                        </ButtonCustomizeWayTwo>
-                        <ButtonCustomizeWayTwo
-                            role={'danger'}
-                            active={true}
+                        </ButtonZoomRotate>
+                        <ButtonZoomRotate role={'danger'}
+                                          active={true}
                         >
                             Create new
-                        </ButtonCustomizeWayTwo>
+                        </ButtonZoomRotate>
                     </div>
                 </section>
 
@@ -79,10 +74,18 @@ export default class App extends Component {
                 <hr/>
 
                 <section>
-                    <h1>Panel</h1>
-                    <Panel header={'Sign in to Sphinx'}>
-                        <p>Body</p>
-                    </Panel>
+                    <h2>Panel</h2>
+                    <div style={{ width: '30%' }}>
+                        <Panel>
+                            <PanelHeader>
+                                Header
+                            </PanelHeader>
+                            {dividers.dividerTop}
+                            <PanelBody>
+                                Body
+                            </PanelBody>
+                        </Panel>
+                    </div>
                 </section>
 
                 <hr/>
@@ -96,10 +99,9 @@ export default class App extends Component {
 
                 <section>
                     <h1>Checkbox</h1>
-                    <Checkbox
-                        checked={'true'}
-                        label={'Checkbox'}
-                        onChange={ (checked) => console.log(checked) }
+                    <Checkbox checked={'true'}
+                              label={'Checkbox'}
+                              onChange={ (checked) => console.log(checked) }
                     />
                 </section>
 
@@ -118,9 +120,8 @@ export default class App extends Component {
                         <DataTable
                             header={[
                                 <th>
-                                    <Checkbox
-                                        checked={'true'}
-                                        onChange={ (checked) => console.log(checked) }
+                                    <Checkbox checked={'true'}
+                                              onChange={ (checked) => console.log(checked) }
                                     />
                                 </th>,
                                 <th>Member ID</th>,
@@ -137,9 +138,8 @@ export default class App extends Component {
                                 return (
                                     <tr key={index}>
                                         <td>
-                                            <Checkbox
-                                                checked={'true'}
-                                                onChange={ (checked) => console.log(checked) }
+                                            <Checkbox checked={'true'}
+                                                      onChange={ (checked) => console.log(checked) }
                                             />
                                         </td>
                                         <td>{memberID}</td>
@@ -157,9 +157,8 @@ export default class App extends Component {
                         <DataTable
                             header={[
                                 <th>
-                                    <Checkbox
-                                        checked={'true'}
-                                        onChange={ (checked) => console.log(checked) }
+                                    <Checkbox checked={'true'}
+                                              onChange={ (checked) => console.log(checked) }
                                     />
                                 </th>,
                                 <th>Member ID</th>,
@@ -176,9 +175,8 @@ export default class App extends Component {
                                 return (
                                     <tr key={index}>
                                         <td>
-                                            <Checkbox
-                                                checked={'true'}
-                                                onChange={ (checked) => console.log(checked) }
+                                            <Checkbox checked={'true'}
+                                                      onChange={ (checked) => console.log(checked) }
                                             />
                                         </td>
                                         <td>{memberID}</td>
@@ -218,9 +216,8 @@ export default class App extends Component {
 
                 <section>
                     <h1>DropDown</h1>
-                    <DropDown
-                        show={this.state.showDropDown}
-                        toggleDropDown={ () => this.toggleDropDown() }
+                    <DropDown show={this.state.showDropDown}
+                              toggleDropDown={ () => this.toggleDropDown() }
                     />
                 </section>
 
@@ -228,66 +225,57 @@ export default class App extends Component {
 
                 <section>
                     <h1>Button</h1>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={true}
-                        role={''}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={true}
+                            role={''}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'primary'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'primary'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'secondary'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'secondary'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'success'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'success'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'info'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'info'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'warning'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'warning'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'danger'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'danger'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        role={'link'}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            role={'link'}
                     >
                         Click
                     </Button>
-                    <Button
-                        onClick={ () => alert('Samurai')}
-                        disabled={false}
-                        responsive={true}
+                    <Button onClick={ () => alert('Samurai')}
+                            disabled={false}
+                            responsive={true}
                     >
                         Click
                     </Button>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './ButtonCustomizeWayTwo.css';
+import './ButtonZoomRotate.css';
 
-export default class ButtonCustomizeWayTwo extends Component {
+export default class ButtonZoomRotate extends Component {
 
     constructor(props) {
         super(props);
