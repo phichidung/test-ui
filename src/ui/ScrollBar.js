@@ -37,11 +37,7 @@ export default class ScrollBar extends Component {
                 {
                     users.map((user, index) => {
                         return (
-                            <div style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                margin: '50px',
-                            }}>
+                            <div style={{ display: 'flex', justifyContent: 'center', margin: 50 }}>
                                 <div>
                                     {user.name}
                                 </div>

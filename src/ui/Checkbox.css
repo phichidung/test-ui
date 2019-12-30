@@ -1,4 +1,7 @@
 .neu.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 16px;
     height: 16px;
     border-radius: 4px;
@@ -8,4 +11,9 @@
 
 .neu.checkbox.checked {
     background-color: #4ece3d;
+}
+
+.neu.checkbox-image {
+    width: 10px;
+    height: 10px;
 }

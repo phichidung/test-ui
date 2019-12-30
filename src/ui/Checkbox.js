@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes            from 'prop-types';
 import './Checkbox.css';
 
 export default class Checkbox extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            checked: props.checked
-        }
-    };
-
-    onClick() {
-        this.setState({ checked: !this.state.checked },
-        () => this.props.onChange(this.state.checked))
-    };
-
     render() {
-        const { checked } = this.state;
-        const { label }   = this.props;
+        const { label, onClick, checked } = this.props;
 
         return (
-            <label onClick={ () => this.onClick() } style={{ display: 'flex' }}>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div className={`neu checkbox ${checked ? 'checked' : ''}`}
-                         style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                    >
-                        <img style={{ height: 10, width: 10 }}
-                             src={require('../images/checkmark.svg')}
-                             alt={'checkmark'}
-                        />
-                    </div>
+            <label style={{ display: 'flex' }} onClick={onClick}>
+                <div className={`neu checkbox ${checked ? 'checked' : ''}`}>
+                    {
+                        checked && <img className={'neu checkbox-image'} src={require('../images/checkmark.svg')} alt={'checkmark'} />
+                    }
                 </div>
                 &nbsp;
                 <div>
@@ -39,3 +22,15 @@ export default class Checkbox extends Component {
         );
     }
 }
+
+PropTypes.defaultProps = {
+    checked : false,
+    label   : '',
+    onClick : () => {}
+};
+
+PropTypes.propTypes = {
+    checked : PropTypes.bool,
+    label   : PropTypes.string,
+    onClick : PropTypes.func
+};

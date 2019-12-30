@@ -10,23 +10,18 @@ import {
     Button,
     ScrollBar,
 }                                         from '../src/ui';
-import Panel, { PanelBody, PanelHeader }  from "./ui/Panel";
-import { Clock, Timer, Todo }             from './components';
-import { dividers }                       from "./common/dividers";
+import Panel, { PanelBody, PanelHeader }  from './ui/Panel';
+import { Clock, Timer, Todo, Form }       from './components';
+import { dividers }                       from './common/dividers';
 
 export default class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            showDropDown: false
+            showDropDown : false,
+            checked      : false
         };
-    };
-
-    toggleDropDown() {
-        this.setState({
-            showDropDown: !this.state.showDropDown
-        })
     };
 
     render() {
@@ -99,9 +94,9 @@ export default class App extends Component {
 
                 <section>
                     <h1>Checkbox</h1>
-                    <Checkbox checked={'true'}
+                    <Checkbox checked={this.state.checked}
                               label={'Checkbox'}
-                              onChange={ (checked) => console.log(checked) }
+                              onClick={ () => this.setState({ checked: !this.state.checked })}
                     />
                 </section>
 
@@ -217,7 +212,7 @@ export default class App extends Component {
                 <section>
                     <h1>DropDown</h1>
                     <DropDown show={this.state.showDropDown}
-                              toggleDropDown={ () => this.toggleDropDown() }
+                              toggleDropDown={() => this.setState({ showDropDown: !this.state.showDropDown })}
                     />
                 </section>
 
@@ -286,6 +281,13 @@ export default class App extends Component {
                 <section>
                     <h1>ScrollBar</h1>
                     <ScrollBar/>
+                </section>
+
+                <hr/>
+
+                <section>
+                    <h1>Form</h1>
+                    <Form/>
                 </section>
             </div>
         );
